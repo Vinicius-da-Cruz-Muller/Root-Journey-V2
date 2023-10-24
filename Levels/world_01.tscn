@@ -1,14 +1,14 @@
 [gd_scene load_steps=17 format=3 uid="uid://dmbibvg2wruve"]
 
-[ext_resource type="Texture2D" uid="uid://b41nc1k11v0en" path="res://Assets/Cenário/Terrain (16 x 16).png" id="1_t3whr"]
+[ext_resource type="Texture2D" uid="uid://b41nc1k11v0en" path="res://Assets/Cenário/Tilesets/Terrain (16 x 16).png" id="1_48ru8"]
 [ext_resource type="Texture2D" uid="uid://qqxp1lwdu1kp" path="res://Assets/Cenário/Tilesets/Grassland_entities (16 x 16).png" id="2_3uxaf"]
-[ext_resource type="Texture2D" uid="uid://c6ctpaote4s4e" path="res://Assets/Cenário/Terrain (16x16).png" id="3_j5pac"]
+[ext_resource type="Texture2D" uid="uid://c6ctpaote4s4e" path="res://Assets/Cenário/Tilesets/Terrain (16x16).png" id="3_cv24l"]
 [ext_resource type="PackedScene" uid="uid://bq45daxebnec6" path="res://Actors/player.tscn" id="4_4eqfj"]
-[ext_resource type="Texture2D" uid="uid://bco4g6lnsrt0i" path="res://Assets/Cenário/5 - Sky_color.png" id="5_t1dqn"]
-[ext_resource type="Texture2D" uid="uid://dvwi4jlvd41p6" path="res://Assets/Cenário/4 - Cloud_cover_2.png" id="6_aq33k"]
-[ext_resource type="Texture2D" uid="uid://dvaauggpyxsve" path="res://Assets/Cenário/3 - Cloud_cover_1.png" id="7_0411p"]
-[ext_resource type="Texture2D" uid="uid://ccwnv18ieuuu6" path="res://Assets/Cenário/2 - Hills.png" id="8_wyopf"]
-[ext_resource type="Texture2D" uid="uid://kmlupeogm8mm" path="res://Assets/Cenário/1 - Foreground_scenery.png" id="9_8gs7y"]
+[ext_resource type="Texture2D" uid="uid://bco4g6lnsrt0i" path="res://Assets/Cenário/Parallax/5 - Sky_color.png" id="5_irvfj"]
+[ext_resource type="Texture2D" uid="uid://dvwi4jlvd41p6" path="res://Assets/Cenário/Parallax/4 - Cloud_cover_2.png" id="6_qkwv8"]
+[ext_resource type="Texture2D" uid="uid://dvaauggpyxsve" path="res://Assets/Cenário/Parallax/3 - Cloud_cover_1.png" id="7_4y0kg"]
+[ext_resource type="Texture2D" uid="uid://ccwnv18ieuuu6" path="res://Assets/Cenário/Parallax/2 - Hills.png" id="8_i53jv"]
+[ext_resource type="Texture2D" uid="uid://kmlupeogm8mm" path="res://Assets/Cenário/Parallax/1 - Foreground_scenery.png" id="9_prels"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_sfgt5"]
 tile_data = PackedInt32Array(0, 65538, 1)
@@ -20,7 +20,7 @@ tile_data = PackedInt32Array(0, 327682, 1)
 tile_data = PackedInt32Array(0, 589826, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2tiei"]
-texture = ExtResource("1_t3whr")
+texture = ExtResource("1_48ru8")
 3:1/0 = 0
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
@@ -235,7 +235,7 @@ texture = ExtResource("2_3uxaf")
 9:1/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cr5q4"]
-texture = ExtResource("3_j5pac")
+texture = ExtResource("3_cv24l")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -711,7 +711,7 @@ motion_mirroring = Vector2(432, 0)
 
 [node name="texture" type="Sprite2D" parent="bg/5"]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("5_t1dqn")
+texture = ExtResource("5_irvfj")
 centered = false
 
 [node name="4" type="ParallaxLayer" parent="bg"]
@@ -721,7 +721,7 @@ motion_mirroring = Vector2(432, 0)
 
 [node name="backclouds" type="Sprite2D" parent="bg/4"]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("6_aq33k")
+texture = ExtResource("6_qkwv8")
 centered = false
 
 [node name="3" type="ParallaxLayer" parent="bg"]
@@ -731,7 +731,7 @@ motion_mirroring = Vector2(432, 0)
 
 [node name="clouds" type="Sprite2D" parent="bg/3"]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("7_0411p")
+texture = ExtResource("7_4y0kg")
 centered = false
 
 [node name="2" type="ParallaxLayer" parent="bg"]
@@ -741,7 +741,7 @@ motion_mirroring = Vector2(432, 0)
 
 [node name="texture" type="Sprite2D" parent="bg/2"]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_wyopf")
+texture = ExtResource("8_i53jv")
 centered = false
 
 [node name="1" type="ParallaxLayer" parent="bg"]
@@ -751,5 +751,5 @@ motion_mirroring = Vector2(432, 0)
 
 [node name="texture" type="Sprite2D" parent="bg/1"]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_8gs7y")
+texture = ExtResource("9_prels")
 centered = false
