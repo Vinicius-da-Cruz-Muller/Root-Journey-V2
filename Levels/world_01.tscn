@@ -675,6 +675,9 @@ texture = ExtResource("3_cv24l")
 15:10/0 = 0
 15:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:10/0/physics_layer_0/angular_velocity = 0.0
+15:3/0 = 0
+15:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+15:3/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_ps6p6"]
 physics_layer_0/collision_layer = 2

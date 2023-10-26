@@ -13,8 +13,6 @@ func _process(delta: float)-> void:
 
 func _on_body_entered(body: Node2D)-> void:
 	$anim.play("collect")
-	queue_free() 
-
 
 func _on_anim_animation_finished():
-	pass # Replace with function body.
+	queue_free() 
