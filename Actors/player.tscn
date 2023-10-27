@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bq45daxebnec6"]
+[gd_scene load_steps=17 format=3 uid="uid://bq45daxebnec6"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_fc701"]
 [ext_resource type="Texture2D" uid="uid://c5r1rwev6ixva" path="res://Assets/Character/Idle_(16_x_16)-1.png.png" id="2_it7u7"]
@@ -90,13 +90,15 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3krd8"]
+size = Vector2(12, 11)
+
 [node name="player" type="CharacterBody2D"]
 position = Vector2(0, -7)
-collision_mask = 14
+collision_mask = 30
 script = ExtResource("1_fc701")
 
 [node name="collision" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CapsuleShape2D_o6ynx")
 
 [node name="camera" type="Camera2D" parent="."]
@@ -112,3 +114,12 @@ animation = &"jump"
 autoplay = "idle"
 
 [node name="animator" type="AnimationPlayer" parent="."]
+
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 4
+
+[node name="collision_hurtbox" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_3krd8")
+debug_color = Color(0.937255, 0.219608, 0.32549, 0.419608)
