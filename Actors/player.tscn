@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://bq45daxebnec6"]
+[gd_scene load_steps=18 format=3 uid="uid://bq45daxebnec6"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_fc701"]
 [ext_resource type="Texture2D" uid="uid://c5r1rwev6ixva" path="res://Assets/Character/Idle_(16_x_16)-1.png.png" id="2_it7u7"]
 [ext_resource type="Texture2D" uid="uid://c4iabx50ej4vo" path="res://Assets/Character/Jumping_(16x16).png" id="3_7vhe0"]
 [ext_resource type="Texture2D" uid="uid://dh8dclxr1kd53" path="res://Assets/Character/Running_(16_x_16)-1.png.png" id="4_w4nuf"]
+[ext_resource type="AudioStream" uid="uid://btqwvdougv35o" path="res://Sounds/retro-jump.wav" id="5_c2ges"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o6ynx"]
 radius = 5.0
@@ -101,13 +102,6 @@ script = ExtResource("1_fc701")
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_o6ynx")
 
-[node name="camera" type="Camera2D" parent="."]
-visible = false
-zoom = Vector2(2, 2)
-limit_left = -50
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-
 [node name="anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wm8p5")
 animation = &"jump"
@@ -123,3 +117,22 @@ collision_mask = 4
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_3krd8")
 debug_color = Color(0.937255, 0.219608, 0.32549, 0.419608)
+
+[node name="remote" type="RemoteTransform2D" parent="."]
+
+[node name="ray_right" type="RayCast2D" parent="."]
+position = Vector2(4.5, 0)
+target_position = Vector2(4, 0)
+collision_mask = 4
+
+[node name="ray_left" type="RayCast2D" parent="."]
+position = Vector2(-4.5, 0)
+target_position = Vector2(-4, 0)
+collision_mask = 4
+
+[node name="jump_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_c2ges")
+volume_db = -10.0
+pitch_scale = 0.7
+
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
